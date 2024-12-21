@@ -85,6 +85,15 @@ class NotInCallError(Exception):
             'The userbot is not in a call',
         )
 
+class NotInGroupCallError(Exception):
+    """The userbot there isn't in a group call, raised by
+    :meth:`~pytgcalls.PyTgCalls.leave_group_call`
+    """
+
+    def __init__(self):
+        super().__init__(
+            'The userbot there isn\'t in a group call',
+        )
 
 class AlreadyJoinedError(Exception):
     def __init__(self):

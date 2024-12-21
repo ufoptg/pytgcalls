@@ -18,13 +18,13 @@ class PyTgCallsSession:
         if not self.notice_displayed:
             PyTgCallsSession.notice_displayed = True
             year = date.today().year
-            print(
-                f'PyTgCalls v{__version__} powered by '
-                f'NTgCalls v{ntgcalls.__version__}, Copyright (C) '
-                f'2021-{year} Laky-64 <https://github.com/Laky-64>\n'
-                'Licensed under the terms of the GNU Lesser '
-                'General Public License v3 or later (LGPLv3+)\n',
-            )
+            #print(
+            #    f'PyTgCalls v{__version__} powered by '
+            #    f'NTgCalls v{ntgcalls.__version__}, Copyright (C) '
+            #    f'2021-{year} Laky-64 <https://github.com/Laky-64>\n'
+            #    'Licensed under the terms of the GNU Lesser '
+            #    'General Public License v3 or later (LGPLv3+)\n',
+            #)
             try:
                 remote_stable_ver = await self._remote_version('master')
                 remote_dev_ver = await self._remote_version('dev')

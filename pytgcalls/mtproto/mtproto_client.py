@@ -37,7 +37,15 @@ class MtProtoClient:
                 client,
             )
         else:
-            raise InvalidMTProtoClient()
+            try:
+                from .telethon_client import TelethonClient
+                self._bind_client = TelethonClient(
+                    cache_duration,
+                    client,
+                )
+            except Exception as ex:
+                print(ex)
+                raise InvalidMTProtoClient()
 
     async def get_group_call_participants(
         self,
